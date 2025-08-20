@@ -1,0 +1,10 @@
+:root {
+  --light-blue-bg: #f0f8ff; /* AliceBlue, sangat dekat dengan putih */
+}
+
+body{
+    background-color : var(--light-blue-bg)
+}
+
+
+  
