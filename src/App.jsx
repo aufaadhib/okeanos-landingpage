@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import { Scrollbars } from "react-custom-scrollbars-4";
+import AboutSection from './components/AboutSection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
     <>
       <Navbar/>
       <Hero/>
+      <AboutSection/>
     </>
   )
 }

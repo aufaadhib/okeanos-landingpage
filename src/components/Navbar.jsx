@@ -40,7 +40,7 @@ const Navbar = () => {
     <>
       {/* Navbar Atas */}
       <div
-        className={`fixed w-full flex z-[60] justify-between h-14 md:h-20 items-center px-10 lg:px-44 duration-500 text-white border-b border-gray-500  ${onScroll ? 'bg-opacity-90 backdrop-blur-md' : 'bg-opacity-100 backdrop-blur-none'}`}
+        className={`fixed w-full flex z-[60] justify-between h-14 md:h-20 items-center px-10 lg:px-44 duration-500 text-white   ${onScroll ? 'bg-opacity-90 backdrop-blur-md border-b border-gray-500' : 'bg-opacity-100 backdrop-blur-none'}`}
       >
         <a href="#" className="font-bold text-2xl text-black flex flex-row justify-center items-center">
           {/* <img src={logo} alt="logo" className='w-10 m-2'/> */}
