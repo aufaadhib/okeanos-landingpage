@@ -17,7 +17,7 @@ const PortfolioSection = () => {
                     />
 
                     {/* Kategori Badge */}
-                    <span className="absolute top-3 left-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-md shadow-md">
+                    <span className="absolute top-3 left-3 bg-accent text-white text-xs font-semibold px-3 py-1 rounded-md shadow-md">
                         {category}
                     </span>
 
@@ -130,7 +130,7 @@ const PortfolioSection = () => {
     };
     return (
         <section id="portfolio" className="py-20 lg:px-44 px-10">
-            <div className=''>
+            <div className='relative container mx-auto'>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +156,7 @@ const PortfolioSection = () => {
                             <button
                                 key={btn}
                                 onClick={() => setActive(btn)}
-                                className={`px-6 py-2 rounded-lg font-bold border transition-colors duration-200 cursor-pointer
+                                className={`px-6 py-2 rounded-lg font-medium border transition-colors duration-200 cursor-pointer
                                     ${active === btn
                                         ? "bg-accent text-white border-accent"
                                         : "bg-white text-black border-gray-300 hover:bg-accent hover:text-white"
@@ -169,30 +169,31 @@ const PortfolioSection = () => {
 
                 </motion.div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
-                >
-                    {(active === "Semua"
-                        ? projects.slice(0, 6)
-                        : projects.filter((item) => item.category === active)
-                    ).map((item, index) => (
-                        <motion.div
-                            key={item.id}
-                            variants={itemVariants}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -30 }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                        >
-                            <Card {...item} />
-                        </motion.div>
-                    ))}
-                </motion.div>
-
+                <div className=''>
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
+                    >
+                        {(active === "Semua"
+                            ? projects.slice(0, 6)
+                            : projects.filter((item) => item.category === active)
+                        ).map((item, index) => (
+                            <motion.div
+                                key={item.id}
+                                variants={itemVariants}
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -30 }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                            >
+                                <Card {...item} />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
         </section>
     )
