@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import { Scrollbars } from "react-custom-scrollbars-4";
 import AboutSection from './components/AboutSection';
 import PortfolioSection from './components/PortfolioSection';
+import { ServicesSection } from './components/ServicesSection';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <PortfolioSection/>
 
       </div>
+      <ServicesSection/>
     </>
   )
 }
