@@ -1,9 +1,16 @@
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --light-blue-bg: #f0f8ff; /* AliceBlue, sangat dekat dengan putih */
+  --primary:#0549aa;
+  --secondary: #FFB800;
+  --accent: #4c91ff;
+  --neutral: #1c2a3a;
+  
 }
 
 body{
-    background-color : var(--light-blue-bg)
+    
 }
 
 
