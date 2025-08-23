@@ -16,13 +16,16 @@ function App() {
     <>
       <Navbar/>
       <Hero/>
-      <div className='relative bg-gradient-to-l from-accent/20 via-accent/5 to-white'>
-      <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent pointer-events-none" />
+      <div className='relative bg-gradient-to-l from-accent/20 via-accent/5 to-white pb-20'>
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent pointer-events-none" />
         <AboutSection/>
-        <PortfolioSection/>
       </div>
       <ServicesSection/>
       <DevisionSection/>
+      <div className='relative bg-gradient-to-l from-accent/20 via-accent/5 to-white pb-10'>
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent pointer-events-none" />
+        <PortfolioSection/>
+      </div>
       <VideoSection/>
     </>
   )
