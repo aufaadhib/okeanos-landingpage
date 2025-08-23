@@ -10,9 +10,10 @@ const Hero = () => {
     { Icon: Atom, delay: 1.1 },
   ];
   return (
-    <section id="beranda" className="relative min-h-screen flex items-center overflow-hidden pt-16 ">
+    <section id="beranda" className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-16 lg:px-44 pb-10 lg:pb-0">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/10"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-tl from-primary/20 via-background to-secondary/10"></div> */}
       
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -53,7 +54,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <span className="text-sm">🧪 Mitra Terpercaya Industri Kimia</span>
+                <span className="text-md">🧪 Mitra Terpercaya Industri Kimia</span>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -63,7 +64,7 @@ const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
-                    className="text-primary"
+                    className="text-accent"
                   >
                     Terdepan
                   </motion.span>
@@ -135,12 +136,12 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 backdrop-blur-sm">
-              {/* <ImageWithFallback
+            <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 backdrop-blur-sm">
+              <img
                 src="https://images.unsplash.com/photo-1618053448748-b7251851d014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaGVtaXN0cnklMjBsYWJvcmF0b3J5JTIwc2NpZW50aXN0fGVufDF8fHx8MTc1NTU4NTQ2NXww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Modern Chemistry Laboratory Research"
                 className="w-full h-auto rounded-2xl shadow-2xl"
-              /> */}
+              />
               
               {/* Floating Cards */}
               <motion.div

@@ -40,7 +40,7 @@ const Navbar = () => {
     <>
       {/* Navbar Atas */}
       <div
-        className={`fixed w-full flex z-[60] justify-between h-14 md:h-20 items-center px-10 lg:px-44 duration-500 text-white   ${onScroll ? 'bg-opacity-90 backdrop-blur-md border-b border-gray-500' : 'bg-opacity-100 backdrop-blur-none'}`}
+        className={`fixed w-full flex z-[60] justify-between h-20 md:h-20 items-center px-10 lg:px-44 duration-500 text-white   ${onScroll ? 'border-b-2 border-gray-300 bg-white' : 'bg-opacity-100 backdrop-blur-none'}`}
       >
         <a href="#" className="font-bold text-2xl text-black flex flex-row justify-center items-center">
           {/* <img src={logo} alt="logo" className='w-10 m-2'/> */}
@@ -56,16 +56,17 @@ const Navbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + index * 0.1 }}
-              className="relative group text-foreground hover:text-[#0080e4] transition-colors duration-200"
+              className="relative group text-foreground hover:text-accent transition-colors duration-200"
             >
               {item.label}
               {/* underline animasi dari kiri ke kanan */}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#0080e4] transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"></span>
             </motion.a>
           ))}
         </nav>
 
-        <div className="border rounded-lg px-5 py-2 bg-[#0080e4] font-bold text-white hidden cursor-pointer lg:flex hover:bg-[#00a0ff] transition-colors duration-200">
+        <div className="border rounded-lg px-5 py-2 bg-primary font-bold text-white hidden cursor-pointer lg:flex hover:bg-accent transition-colors duration-200">
           Hubungi Kami
         </div>
 
