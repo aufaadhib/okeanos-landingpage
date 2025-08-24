@@ -28,7 +28,7 @@ const AboutSection = () => {
     'Tim ahli bersertifikat internasional'
   ];
   return (
-    <section id="tentang" className="pt-20 lg:px-44">
+    <section id="about" className="pb-20 lg:px-44 pt-30">
       <div className="container mx-auto px-10 lg:px-1">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
