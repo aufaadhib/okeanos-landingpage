@@ -11,7 +11,7 @@ const NewsSection = ({ onNewsClick, onViewAllNews }) => {
   const newsItems = [];
   const loading = false;
   const error = null;
-  const fetchNews = () => {};
+  const fetchNews = () => { };
 
   // Fallback data jika tidak ada data dari Supabase
   const fallbackNewsItems = [
@@ -222,18 +222,18 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
       newsItems.length > 0
         ? item
         : {
-            id: item.id,
-            title: item.title,
-            excerpt: item.excerpt,
-            content: item.content,
-            image: item.image,
-            author: item.author,
-            date: item.date,
-            category: item.category,
-            readTime: item.readTime,
-            views: item.views,
-            tags: item.tags,
-          };
+          id: item.id,
+          title: item.title,
+          excerpt: item.excerpt,
+          content: item.content,
+          image: item.image,
+          author: item.author,
+          date: item.date,
+          category: item.category,
+          readTime: item.readTime,
+          views: item.views,
+          tags: item.tags,
+        };
     onNewsClick(newsItem);
   };
 
@@ -340,7 +340,8 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
   }
 
   return (
-    <section id="news" className="py-20 ">
+    <section id="news" className="py-20 relative">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/20 via-background to-accent/10"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -386,7 +387,7 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
           >
             <h3 className="text-xl font-semibold mb-6">Berita Lainnya</h3>
 
-            {regularNews.slice(0, 4).map((item, index) => (
+            {regularNews.slice(0, 2).map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}

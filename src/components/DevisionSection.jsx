@@ -55,7 +55,7 @@ const DevisionSection = () => {
         setSelectedDivision((prev) => (prev - 1 + divisions.length) % divisions.length);
     };
   return (
-    <section id="division" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
+    <section id="okeanos" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
     {/* Background Elements */}
     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30 pointer-events-none" />
     

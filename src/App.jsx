@@ -63,7 +63,7 @@ function App() {
 
   return (
 <div className="min-h-screen relative">
-      <BackgroundAnimation>
+      {/* <BackgroundAnimation> */}
         {currentView === 'home' ? (
           <>
             <Navbar />
@@ -105,7 +105,7 @@ function App() {
           />
         ) : null}
         {/* <AdminPanel /> */}
-      </BackgroundAnimation>
+      {/* </BackgroundAnimation> */}
     </div>
   )
 }

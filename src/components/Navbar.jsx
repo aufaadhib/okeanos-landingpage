@@ -19,12 +19,13 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("beranda");
 
   const navItems = [
-    { label: 'Beranda', href: '#home' },
-    { label: 'Tentang', href: '#about' },
-    { label: 'Layanan', href: '#service' },
-    { label: 'Portfolio', href: '#portofolio' },
-    { label: 'Berita', href: '#berita' },
-    { label: 'Kontak', href: '#kontak' },
+    { label: 'Beranda', href: '#home', icon: Home },
+    { label: 'Tentang', href: '#about', icon: Info },
+    { label: 'Layanan', href: '#service', icon: Briefcase },
+    { label: 'Okeanos', href: '#okeanos', icon: Boxes },
+    { label: 'Portfolio', href: '#portfolio', icon: FileText },
+    { label: 'Berita', href: '#news', icon: Bell },
+    { label: 'Video', href: '#video', icon: Youtube },
   ]
 
   // Lock scroll saat menu open
