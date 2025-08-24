@@ -85,7 +85,7 @@ const ServicesSection = () => {
           className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/80 rounded-full mb-6"
         >
           <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-          <span className="text-blue-700 text-sm font-medium">Layanan Kami</span>
+          <span className="text-blue-700 text-md font-medium">Layanan Kami</span>
         </motion.div>
         
         <motion.h2
