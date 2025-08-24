@@ -14,6 +14,7 @@ import { PortfolioDetailPage } from './components/PortfolioDetailPage';
 import NewsSection from './components/NewsSection';
 import NewsDetailPage from './components/NewsDetailPage';
 import AllNewsPage from './components/AllNewsPage';
+import Footer from './components/Footer';
 
 
 
@@ -82,6 +83,8 @@ function App() {
               />
               <VideoSection />
             </main>
+            <Footer />
+
           </>
         ) : currentView === 'news-detail' && selectedNewsItem ? (
           <NewsDetailPage 
