@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import { ChevronRight, Beaker, Microscope, Atom } from 'lucide-react';
-import Button from './Ui/Button';
+import Button from './ui/button';
 
 const Hero = () => {
   const floatingIcons = [
@@ -10,7 +10,7 @@ const Hero = () => {
     { Icon: Atom, delay: 1.1 },
   ];
   return (
-    <section id="beranda" className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-16 lg:px-44 pb-10 lg:pb-0">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-16 lg:px-44 pb-10 lg:pb-0">
       {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/10"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-tl from-primary/20 via-background to-secondary/10"></div> */}

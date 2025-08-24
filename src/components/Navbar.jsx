@@ -18,19 +18,15 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("beranda");
 
-  const navItems = React.useMemo(
-    () => [
-      { label: "Beranda", href: "#beranda", icon: Home },
-      { label: "Tentang", href: "#tentang", icon: Info },
-      { label: "Layanan", href: "#layanan", icon: FileText },
-      { label: "Okeanos", href: "#division", icon: Boxes },
-      { label: "Portfolio", href: "#portfolio", icon: Briefcase },
-      { label: "Berita", href: "#berita", icon: Bell },
-      { label: "Video", href: "#video", icon: Youtube },
-      { label: "Kontak", href: "#kontak", icon: Mail },
-    ],
-    []
-  );
+  const navItems = [
+    { label: 'Beranda', href: '#home', icon: Home },
+    { label: 'Tentang', href: '#about', icon: Info },
+    { label: 'Layanan', href: '#service', icon: Briefcase },
+    { label: 'Okeanos', href: '#okeanos', icon: Boxes },
+    { label: 'Portfolio', href: '#portfolio', icon: FileText },
+    { label: 'Berita', href: '#news', icon: Bell },
+    { label: 'Video', href: '#video', icon: Youtube },
+  ]
 
   // Lock scroll saat menu open
   useEffect(() => {

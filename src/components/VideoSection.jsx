@@ -172,9 +172,9 @@ export function VideoSection() {
                     </motion.div>
 
                     {/* Video Info Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-black/70 backdrop-blur-sm rounded-lg p-4">
-                        <h3 className="text-white font-semibold text-lg mb-2">{selectedVideo.title}</h3>
+                    <div className="absolute lg:bottom-4 lg:left-4 lg:right-4 bottom-3 left-3 right-3 hidden lg:block">
+                      <div className="bg-black/70 backdrop-blur-sm rounded-lg lg:p-4 p-3">
+                        <h3 className="text-white font-semibold text-md lg:text-lg mb-2 truncate">{selectedVideo.title}</h3>
                         <div className="flex items-center gap-4 text-sm text-gray-300">
                           <span className="flex items-center gap-1">
                             <Volume2 className="w-4 h-4" />
