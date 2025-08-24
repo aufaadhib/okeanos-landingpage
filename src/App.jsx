@@ -8,23 +8,88 @@ import PortfolioSection from './components/PortfolioSection';
 import { VideoSection } from './components/VideoSection';
 import ServicesSection from './components/ServicesSection';
 import DevisionSection from './components/DevisionSection';
+import { BackgroundAnimation } from './components/BackgroundAnimation';
+import AllPortfolioPage from './components/AllPortfolioPage';
+import { PortfolioDetailPage } from './components/PortfolioDetailPage';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentView, setCurrentView] = useState('home'); // 'home' | 'news-detail' | 'all-news' | 'portfolio-detail' | 'all-portfolio'
+  const [selectedNewsItem, setSelectedNewsItem] = useState(null);
+  const [selectedPortfolioItem, setSelectedPortfolioItem] = useState(null);
+
+  // const handleNewsClick = (newsItem) => {
+  //   setSelectedNewsItem(newsItem);
+  //   setCurrentView('news-detail');
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
+
+  const handlePortfolioClick = (portfolioItem) => {
+    setSelectedPortfolioItem(portfolioItem);
+    setCurrentView('portfolio-detail');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // const handleViewAllNews = () => {
+  //   setCurrentView('all-news');
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // };
+
+  const handleViewAllPortfolio = () => {
+    setCurrentView('all-portfolio');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToHome = () => {
+    const previousView = currentView;
+    setCurrentView('home');
+    setSelectedNewsItem(null);
+    setSelectedPortfolioItem(null);
+
+    setTimeout(() => {
+      if (previousView === 'news-detail' || previousView === 'all-news') {
+        const newsSection = document.getElementById('news');
+        if (newsSection) newsSection.scrollIntoView({ behavior: 'smooth' });
+      } else if (previousView === 'portfolio-detail' || previousView === 'all-portfolio') {
+        const portfolioSection = document.getElementById('portfolio');
+        if (portfolioSection) portfolioSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   return (
-    <>
-      <Navbar/>
-      <Hero/>
-      <div className='relative bg-gradient-to-l from-accent/20 via-accent/5 to-white'>
-      <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent pointer-events-none" />
-        <AboutSection/>
-        <PortfolioSection/>
-      </div>
-      <ServicesSection/>
-      <DevisionSection/>
-      <VideoSection/>
-    </>
+<div className="min-h-screen relative">
+      <BackgroundAnimation>
+        {currentView === 'home' ? (
+          <>
+            <Navbar />
+            <main className="relative">
+              <Hero />
+              <AboutSection />
+              <ServicesSection />
+              <DevisionSection />
+              <PortfolioSection 
+                onPortfolioClick={handlePortfolioClick}
+                onViewAllPortfolio={handleViewAllPortfolio}
+              />
+              <VideoSection />
+            </main>
+          </>
+        ) : currentView === 'portfolio-detail' && selectedPortfolioItem ? (
+          <PortfolioDetailPage 
+            portfolioItem={selectedPortfolioItem} 
+            onBack={handleBackToHome}
+          />
+        ) : currentView === 'all-portfolio' ? (
+          <AllPortfolioPage 
+            onPortfolioClick={handlePortfolioClick}
+            onBack={handleBackToHome}
+          />
+        ) : null}
+        {/* <AdminPanel /> */}
+      </BackgroundAnimation>
+    </div>
   )
 }
 

@@ -8,10 +8,10 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   const navItems = [
-    { label: 'Beranda', href: '#beranda' },
-    { label: 'Tentang', href: '#tentang' },
-    { label: 'Layanan', href: '#layanan' },
-    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Beranda', href: '#home' },
+    { label: 'Tentang', href: '#about' },
+    { label: 'Layanan', href: '#service' },
+    { label: 'Portfolio', href: '#portofolio' },
     { label: 'Berita', href: '#berita' },
     { label: 'Kontak', href: '#kontak' },
   ]
