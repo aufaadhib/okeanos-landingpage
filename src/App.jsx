@@ -11,6 +11,9 @@ import DevisionSection from './components/DevisionSection';
 import { BackgroundAnimation } from './components/BackgroundAnimation';
 import AllPortfolioPage from './components/AllPortfolioPage';
 import { PortfolioDetailPage } from './components/PortfolioDetailPage';
+import NewsSection from './components/NewsSection';
+import NewsDetailPage from './components/NewsDetailPage';
+import AllNewsPage from './components/AllNewsPage';
 
 
 
@@ -19,11 +22,11 @@ function App() {
   const [selectedNewsItem, setSelectedNewsItem] = useState(null);
   const [selectedPortfolioItem, setSelectedPortfolioItem] = useState(null);
 
-  // const handleNewsClick = (newsItem) => {
-  //   setSelectedNewsItem(newsItem);
-  //   setCurrentView('news-detail');
-  //   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // };
+  const handleNewsClick = (newsItem) => {
+    setSelectedNewsItem(newsItem);
+    setCurrentView('news-detail');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handlePortfolioClick = (portfolioItem) => {
     setSelectedPortfolioItem(portfolioItem);
@@ -31,10 +34,10 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // const handleViewAllNews = () => {
-  //   setCurrentView('all-news');
-  //   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // };
+  const handleViewAllNews = () => {
+    setCurrentView('all-news');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleViewAllPortfolio = () => {
     setCurrentView('all-portfolio');
@@ -73,9 +76,23 @@ function App() {
                 onPortfolioClick={handlePortfolioClick}
                 onViewAllPortfolio={handleViewAllPortfolio}
               />
+              <NewsSection 
+                onNewsClick={handleNewsClick}
+                onViewAllNews={handleViewAllNews}
+              />
               <VideoSection />
             </main>
           </>
+        ) : currentView === 'news-detail' && selectedNewsItem ? (
+          <NewsDetailPage 
+            newsItem={selectedNewsItem} 
+            onBack={handleBackToHome}
+          />
+        ) : currentView === 'all-news' ? (
+          <AllNewsPage 
+            onNewsClick={handleNewsClick}
+            onBack={handleBackToHome}
+          />  
         ) : currentView === 'portfolio-detail' && selectedPortfolioItem ? (
           <PortfolioDetailPage 
             portfolioItem={selectedPortfolioItem} 
