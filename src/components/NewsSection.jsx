@@ -276,8 +276,8 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
           </div>
 
           {/* Bottom content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm mb-3 opacity-95">
+          <div className=" absolute left-0 right-0 bottom-0 top-20 sm:top-auto p-4 sm:p-8 text-white">
+            <div className="flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm mb-3 opacity-95 hidden sm:flex">
               <span className="inline-flex items-center">
                 <Calendar className="h-4 w-4 mr-1.5" />
                 {formatDate(item.createdAt || item.date)}
@@ -300,11 +300,11 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
               )}
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold leading-tight mb-3 line-clamp-2 group-hover:text-primary transition-colors">
+            <h3 className="text-lg sm:text-3xl font-bold leading-tight mb-3 line-clamp-2 group-hover:text-primary transition-colors">
               {item.title}
             </h3>
 
-            <p className="text-white/90 text-sm sm:text-base line-clamp-3 mb-4 max-w-3xl">
+            <p className="text-white/90 text-sm sm:text-base line-clamp-3 mb-4 max-w-3xl hidden sm:block">
               {item.excerpt}
             </p>
 
@@ -342,7 +342,7 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
   return (
     <section id="news" className="py-20 relative">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/20 via-background to-accent/10"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-8 sm:px-10 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -352,7 +352,7 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
           className="text-center mb-16"
         >
           <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-            <span className="text-sm">📰 Berita & Informasi</span>
+            <span className="text-md">📰 Berita & Informasi</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -360,7 +360,7 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
           </h2>
 
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ikuti perkembangan terbaru dari ChemPartner, mulai dari inovasi produk, pencapaian
+            Ikuti perkembangan terbaru dari Teknokeanos, mulai dari inovasi produk, pencapaian
             perusahaan, hingga insight industri kimia.
           </p>
         </motion.div>

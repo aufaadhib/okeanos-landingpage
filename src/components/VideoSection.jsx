@@ -69,7 +69,7 @@ export function VideoSection() {
     }
   };
   return (
-    <section id="video" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gray-900">
+    <section id="video" className="py-24 px-8 sm:px-10 lg:px-12 relative overflow-hidden bg-gray-900">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-blue-900/20 to-indigo-900/30 pointer-events-none" />
       
@@ -114,7 +114,7 @@ export function VideoSection() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full mb-8"
           >
             <Play className="w-5 h-5 text-blue-300" />
-            <span className="text-blue-300 font-semibold">Video Content</span>
+            <span className="text-blue-300 font-semibold text-md">Video Content</span>
           </motion.div>
           
           <motion.h2

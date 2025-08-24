@@ -28,8 +28,8 @@ const AboutSection = () => {
     'Tim ahli bersertifikat internasional'
   ];
   return (
-    <section id="about" className="pb-20 lg:px-44 pt-30">
-      <div className="container mx-auto px-10 lg:px-1">
+    <section id="about" className="pb-20 pt-30">
+      <div className="container mx-auto px-8 sm:px-10 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -40,7 +40,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <span className="text-md">🏢 Tentang ChemPartner</span>
+                <span className="text-md">🏢 Tentang Teknokeanos</span>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -49,7 +49,7 @@ const AboutSection = () => {
               </h2>
 
               <p className="text-muted-foreground text-lg leading-relaxed">
-                ChemPartner hadir sebagai solusi komprehensif untuk kebutuhan industri kimia Indonesia.
+                Teknokeanos hadir sebagai solusi komprehensif untuk kebutuhan industri kimia Indonesia.
                 Dengan dedikasi tinggi pada inovasi dan kualitas, kami membantu klien mencapai
                 standar internasional dalam riset, produksi, dan pengembangan produk kimia.
               </p>

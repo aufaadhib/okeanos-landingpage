@@ -234,7 +234,7 @@ Material yang dihasilkan telah diaplikasikan dalam prototype device dan menunjuk
 
   return (
     <section id="portfolio" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-8 sm:px-10 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -244,7 +244,7 @@ Material yang dihasilkan telah diaplikasikan dalam prototype device dan menunjuk
           className="text-center mb-16"
         >
           <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-            <span className="text-sm">💼 Portfolio Kami</span>
+            <span className="text-md">💼 Portfolio Kami</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">

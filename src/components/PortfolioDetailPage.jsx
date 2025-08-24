@@ -57,7 +57,7 @@ export function PortfolioDetailPage({ portfolioItem, onBack }) {
         transition={{ duration: 0.6 }}
         className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-6xl mx-auto px-8 sm:px-10 lg:px-12 py-4">
           <div className="flex items-center justify-between">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button 

@@ -3,52 +3,52 @@ import { FlaskConical, Mail, Phone, MapPin, Twitter, Linkedin, Instagram, Facebo
 import { Button } from './Ui/VariantButton';
 import { Separator } from './Ui/Saparator';
 
+const NAVBAR_HEIGHT = 80; // sesuaikan dgn tinggi navbar kamu
+
 const Footer = () => {
-    const socialLinks = [
-        { Icon: Facebook, href: '#', label: 'Facebook' },
-        { Icon: Twitter, href: '#', label: 'Twitter' },
-        { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-        { Icon: Instagram, href: '#', label: 'Instagram' },
-      ];
-    
-      const quickLinks = [
-        { label: 'Tentang Kami', href: '#tentang' },
-        { label: 'Layanan', href: '#layanan' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Berita', href: '#berita' },
-        { label: 'Karir', href: '#karir' },
-        { label: 'Kontak', href: '#kontak' },
-      ];
-    
-      const services = [
-        { label: 'Analisis Laboratorium', href: '#' },
-        { label: 'Konsultasi Teknis', href: '#' },
-        { label: 'Penelitian & Pengembangan', href: '#' },
-        { label: 'Pelatihan & Sertifikasi', href: '#' },
-        { label: 'Quality Control', href: '#' },
-        { label: 'Regulatory Support', href: '#' },
-      ];
-    
-      const contactInfo = [
-        {
-          Icon: MapPin,
-          title: 'Alamat',
-          content: 'Jl. Industri Kimia No. 123\nJakarta Selatan 12345'
-        },
-        {
-          Icon: Phone,
-          title: 'Telepon',
-          content: '+62 21 1234 5678\n+62 811 2345 6789'
-        },
-        {
-          Icon: Mail,
-          title: 'Email',
-          content: 'info@chempartner.co.id\nsupport@chempartner.co.id'
-        },
-      ];
+  const socialLinks = [
+    { Icon: Facebook, href: '#', label: 'Facebook' },
+    { Icon: Twitter, href: '#', label: 'Twitter' },
+    { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { Icon: Instagram, href: '#', label: 'Instagram' },
+  ];
+
+  // ganti href -> target (id section)
+  const quickLinks = [
+    { label: "Tentang Kami", target: "about" },
+    { label: "Layanan", target: "service" },
+    { label: "Okeanos", target: "okeanos" },
+    { label: "Portfolio", target: "portfolio" },
+    { label: "Berita", target: "news" },
+    { label: "Video", target: "video" },
+  ];
+
+  const services = [
+    { label: 'Analisis Laboratorium', href: '#' },
+    { label: 'Konsultasi Teknis', href: '#' },
+    { label: 'Penelitian & Pengembangan', href: '#' },
+    { label: 'Pelatihan & Sertifikasi', href: '#' },
+    { label: 'Quality Control', href: '#' },
+    { label: 'Regulatory Support', href: '#' },
+  ];
+
+  const contactInfo = [
+    { Icon: MapPin, title: 'Alamat', content: 'Jl. Industri Kimia No. 123\nJakarta Selatan 12345' },
+    { Icon: Phone, title: 'Telepon', content: '+62 21 1234 5678\n+62 811 2345 6789' },
+    { Icon: Mail, title: 'Email', content: 'info@teknokeanos.co.id\nsupport@teknokeanos.co.id' },
+  ];
+
+  // util scroll tanpa ubah URL
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - NAVBAR_HEIGHT;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-8 sm:px-10 lg:px-12">
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -64,14 +64,14 @@ const Footer = () => {
                 <div className="bg-primary-foreground rounded-lg p-2">
                   <FlaskConical className="h-6 w-6 text-primary" />
                 </div>
-                <span className="text-xl font-bold">ChemPartner</span>
+                <span className="text-xl font-bold">Teknokeanos</span>
               </div>
-              
+
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                Mitra terpercaya untuk kebutuhan riset, edukasi, dan pengembangan industri kimia. 
+                Mitra terpercaya untuk kebutuhan riset, edukasi, dan pengembangan industri kimia.
                 Berkomitmen memberikan solusi inovatif dengan standar kualitas internasional.
               </p>
-              
+
               {/* Social Links */}
               <div className="flex space-x-4">
                 {socialLinks.map(({ Icon, href, label }) => (
@@ -89,7 +89,7 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            {/* Quick Links */}
+            {/* Quick Links -> BUTTON */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -100,20 +100,21 @@ const Footer = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300 flex items-center group"
+                    <button
+                      type="button"
+                      onClick={() => scrollToId(link.target)}
+                      className="bg-transparent cursor-pointer p-0 text-left inline-flex items-center group text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300 focus:outline-none"
                     >
                       <span className="group-hover:translate-x-1 transition-transform duration-300">
                         {link.label}
                       </span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Services */}
+            {/* Services (biarkan anchor eksternal) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -167,8 +168,8 @@ const Footer = () => {
                 whileTap={{ scale: 0.98 }}
                 className="mt-6"
               >
-                <Button 
-                  variant="secondary" 
+                <Button
+                  variant="secondary"
                   className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90"
                 >
                   Konsultasi Gratis
@@ -197,24 +198,15 @@ const Footer = () => {
                 Designed with ❤️ for the future of chemical industry
               </p>
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm">
-              <a 
-                href="#" 
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300"
-              >
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a 
-                href="#" 
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300"
-              >
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                 Terms of Service
               </a>
-              <a 
-                href="#" 
-                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300"
-              >
+              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300">
                 Sitemap
               </a>
             </div>
@@ -222,7 +214,7 @@ const Footer = () => {
         </motion.div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
