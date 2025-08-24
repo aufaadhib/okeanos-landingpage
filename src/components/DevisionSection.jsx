@@ -55,7 +55,7 @@ const DevisionSection = () => {
         setSelectedDivision((prev) => (prev - 1 + divisions.length) % divisions.length);
     };
   return (
-    <section id="okeanos" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
+    <section id="okeanos" className="py-24 px-8 sm:px-10 lg:px-12 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
     {/* Background Elements */}
     <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30 pointer-events-none" />
     
@@ -99,7 +99,7 @@ const DevisionSection = () => {
           className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full mb-8"
         >
           <Sparkles className="w-5 h-5 text-blue-300" />
-          <span className="text-blue-300 font-semibold">Divisi Okeanos</span>
+          <span className="text-blue-300 font-semibold text-md">Divisi Okeanos</span>
         </motion.div>
         
         <motion.h2

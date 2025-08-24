@@ -10,7 +10,7 @@ const Hero = () => {
     { Icon: Atom, delay: 1.1 },
   ];
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-16 lg:px-44 pb-10 lg:pb-0">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-24 lg:pt-16 pb-10 lg:pb-0">
       {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-accent/10"></div>
         {/* <div className="absolute inset-0 bg-gradient-to-tl from-primary/20 via-background to-secondary/10"></div> */}
@@ -44,7 +44,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="container mx-auto relative z-10 px-10 lg:px-1">
+      <div className="container mx-auto relative z-10 px-8 sm:px-10 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-8">

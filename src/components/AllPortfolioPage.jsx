@@ -175,8 +175,8 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
               </Button>
             </motion.div>
             
-            <h1 className="text-2xl font-bold text-gray-900">Semua Portfolio</h1>
-            <div className="w-32" />
+            <h1 className="lg:text-2xl font-bold text-gray-900">Semua Portfolio</h1>
+
           </div>
         </div>
       </motion.header>

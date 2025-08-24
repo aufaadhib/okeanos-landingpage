@@ -64,7 +64,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="service" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="service" className="py-24 px-8 sm:px-10 lg:px-12 relative overflow-hidden">
     {/* Background Elements */}
     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 pointer-events-none" />
     
