@@ -138,7 +138,7 @@ const Hero = () => {
           >
             <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 backdrop-blur-sm">
               <img
-                src="https://images.unsplash.com/photo-1618053448748-b7251851d014?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaGVtaXN0cnklMjBsYWJvcmF0b3J5JTIwc2NpZW50aXN0fGVufDF8fHx8MTc1NTU4NTQ2NXww&ixlib=rb-4.1.0&q=80&w=1080"
+                src="hero/hero-section.png"
                 alt="Modern Chemistry Laboratory Research"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />

@@ -176,8 +176,8 @@ const AllNewsPage = ({ onBack, onNewsClick }) => {
               </Button>
             </motion.div>
             
-            <h1 className="text-2xl font-bold text-gray-900">Semua Berita</h1>
-            <div className="w-32"></div> {/* Spacer for centering */}
+            <h1 className="text-md lg:text-2xl font-bold text-gray-900">Semua Berita</h1>
+            <div className="w-32 hidden lg:block"></div> {/* Spacer for centering */}
           </div>
         </div>
       </motion.header>
