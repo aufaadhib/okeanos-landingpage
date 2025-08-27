@@ -54,11 +54,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <span className="text-md">🧪 Mitra Terpercaya Industri Kimia</span>
+                <span className="text-md">🧪 Mitra Terpercaya Industri</span>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                Solusi Kimia
+                Solusi Industri
                 <span className="block">
                   <motion.span
                     initial={{ opacity: 0 }}

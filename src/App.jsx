@@ -15,6 +15,7 @@ import NewsSection from './components/NewsSection';
 import NewsDetailPage from './components/NewsDetailPage';
 import AllNewsPage from './components/AllNewsPage';
 import Footer from './components/Footer';
+import NewAboutSection from './components/NewAboutSection';
 
 
 
@@ -70,7 +71,8 @@ function App() {
             <Navbar />
             <main className="relative">
               <Hero />
-              <AboutSection />
+              {/* <AboutSection /> */}
+              <NewAboutSection/>
               <ServicesSection />
               <DevisionSection />
               <PortfolioSection 
