@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  ArrowLeft, 
-  Calendar, 
+import {
+  ArrowLeft,
+  Calendar,
   Search,
   Filter,
   ExternalLink,
@@ -129,7 +129,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
   ];
 
   const categories = [
-    'Semua', 'Riset', 'Industri', 'Edukasi', 'Pengembangan', 
+    'Semua', 'Riset', 'Industri', 'Edukasi', 'Pengembangan',
     'Lingkungan', 'Analisis', 'Energi', 'Teknologi', 'Material', 'Keselamatan'
   ];
 
@@ -165,7 +165,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button 
+              <Button
                 onClick={onBack}
                 variant="outline"
                 className="bg-white/50 backdrop-blur-sm border-gray-200/50 hover:bg-white/80"
@@ -174,9 +174,9 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
                 Kembali ke Beranda
               </Button>
             </motion.div>
-            
-            <h1 className="lg:text-2xl font-bold text-gray-900">Semua Portfolio</h1>
 
+            <h1 className="lg:text-2xl font-bold text-gray-900">Semua Portfolio</h1>
+            <div className="w-32 hidden lg:block"></div> {/* Spacer for centering */}
           </div>
         </div>
       </motion.header>
@@ -254,7 +254,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
                           className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        
+
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                           <Button size="sm" className="bg-white text-primary hover:bg-white/90">
@@ -287,7 +287,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
                         <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">
                           {item.title}
                         </h3>
-                        
+
                         <p className="text-muted-foreground line-clamp-3">
                           {item.description}
                         </p>
@@ -333,7 +333,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Tidak ada portfolio ditemukan</h3>
             <p className="text-gray-600 mb-6">Coba ubah filter atau kata kunci pencarian Anda</p>
-            <Button 
+            <Button
               onClick={() => {
                 setSelectedCategory('Semua');
                 setSearchQuery('');
@@ -355,7 +355,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 pointer-events-none" />
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-32 -translate-y-32" />
-            
+
             <div className="relative z-10">
               <h3 className="text-3xl lg:text-4xl font-bold mb-4">
                 Siap Memulai Proyek Anda?
@@ -364,7 +364,7 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
                 Konsultasikan ide dan kebutuhan proyek Anda dengan tim expert kami
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
+                <Button
                   size="lg"
                   className="bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
                 >
