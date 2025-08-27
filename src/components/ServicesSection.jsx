@@ -164,13 +164,13 @@ const ServicesSection = () => {
                   whileTap={{ scale: 0.95 }}
                   className="pt-2 lg:pt-4"
                 >
-                  <Button 
+                  {/*<Button 
                     className={`bg-gradient-to-r ${service.gradient} hover:opacity-90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group text-sm lg:text-base`}
                     size="lg"
                   >
                     <span>Pelajari Lebih Lanjut</span>
                     <ArrowRight className="w-3 h-3 lg:w-4 lg:h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Button>
+                   </Button> */}
                 </motion.div>
               </motion.div>
             </div>
