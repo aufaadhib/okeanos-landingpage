@@ -131,7 +131,25 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 backdrop-blur-sm">
+            <div className="relative rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8 backdrop-blur-sm">
+              <div className="flex flex-col gap-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.2 }}
+                  className="self-start rounded-xl border border-border bg-card p-4 shadow-lg"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="rounded-lg bg-primary/10 p-2">
+                      <Beaker className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">Riset & Analisis</p>
+                      <p className="text-xs text-muted-foreground">99.9% Akurasi</p>
+                    </div>
+                  </div>
+                </motion.div>
+
               <ImageWithSkeleton
                 src="/optimized/hero-section.webp"
                 alt="Modern Chemistry Laboratory Research"
@@ -140,33 +158,15 @@ const Hero = () => {
                 loading="eager"
                 fetchPriority="high"
               />
-              
-              {/* Floating Cards */}
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2 }}
-                className="absolute -top-4 -left-4 bg-card border border-border rounded-xl p-4 shadow-lg"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="bg-primary/10 p-2 rounded-lg">
-                    <Beaker className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium">Riset & Analisis</p>
-                    <p className="text-xs text-muted-foreground">99.9% Akurasi</p>
-                  </div>
-                </div>
-              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4 }}
-                className="absolute -bottom-4 -right-4 bg-card border border-border rounded-xl p-4 shadow-lg"
+                className="self-end rounded-xl border border-border bg-card p-4 shadow-lg"
               >
                 <div className="flex items-center space-x-3">
-                  <div className="bg-primary/10 p-2 rounded-lg">
+                  <div className="rounded-lg bg-primary/10 p-2">
                     <Microscope className="h-5 w-5 text-primary" />
                   </div>
                   <div>
@@ -175,6 +175,7 @@ const Hero = () => {
                   </div>
                 </div>
               </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
