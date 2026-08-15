@@ -132,23 +132,22 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 p-8 backdrop-blur-sm">
-              <div className="flex flex-col gap-4">
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.2 }}
-                  className="self-start rounded-xl border border-border bg-card p-4 shadow-lg"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="rounded-lg bg-primary/10 p-2">
-                      <Beaker className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium">Riset & Analisis</p>
-                      <p className="text-xs text-muted-foreground">99.9% Akurasi</p>
-                    </div>
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.2 }}
+                className="absolute -left-4 -top-4 z-30 rounded-xl border border-border bg-card p-4 shadow-lg"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="rounded-lg bg-primary/10 p-2">
+                    <Beaker className="h-5 w-5 text-primary" />
                   </div>
-                </motion.div>
+                  <div>
+                    <p className="text-sm font-medium">Riset & Analisis</p>
+                    <p className="text-xs text-muted-foreground">99.9% Akurasi</p>
+                  </div>
+                </div>
+              </motion.div>
 
               <ImageWithSkeleton
                 src="/optimized/hero-section.webp"
@@ -163,7 +162,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4 }}
-                className="self-end rounded-xl border border-border bg-card p-4 shadow-lg"
+                className="absolute -bottom-4 -right-4 z-30 rounded-xl border border-border bg-card p-4 shadow-lg"
               >
                 <div className="flex items-center space-x-3">
                   <div className="rounded-lg bg-primary/10 p-2">
@@ -175,7 +174,6 @@ const Hero = () => {
                   </div>
                 </div>
               </motion.div>
-              </div>
             </div>
           </motion.div>
         </div>
