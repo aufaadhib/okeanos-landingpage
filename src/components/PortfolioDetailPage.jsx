@@ -110,7 +110,7 @@ export function PortfolioDetailPage({ portfolioItem, onBack }) {
             {/* Header */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
               <div className="mb-4">
-                <Badge className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white border-0 px-4 py-2">
+                <Badge className="border-0 bg-primary px-4 py-2 text-primary-foreground">
                   {portfolioItem.category}
                 </Badge>
               </div>
@@ -282,7 +282,7 @@ export function PortfolioDetailPage({ portfolioItem, onBack }) {
               </div>
 
               <div className="mt-6 pt-6 border-t border-gray-100">
-                <Button className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white border-0">
+                <Button className="w-full border-0 bg-primary text-primary-foreground hover:bg-primary/90">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Konsultasi Proyek Serupa
                 </Button>

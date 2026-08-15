@@ -5,13 +5,12 @@ import { Card, CardContent } from './Ui/Card';
 import { Button } from './Ui/VariantButton';
 import { Badge } from './Ui/Badge';
 import { ImageWithFallback } from './Ui/ImageWithFallback';
+import SectionEyebrow from './SectionEyebrow';
 
 const NewsSection = ({ onNewsClick, onViewAllNews }) => {
   // Mock data for now
   const newsItems = [];
   const loading = false;
-  const error = null;
-  const fetchNews = () => { };
 
   // Fallback data jika tidak ada data dari Supabase
   const fallbackNewsItems = [
@@ -351,8 +350,8 @@ ChemPartner merencanakan untuk meluncurkan 10 varian produk dalam fase pertama d
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-            <span className="text-md">📰 Berita & Informasi</span>
+          <div className="mb-6">
+            <SectionEyebrow>Berita dan Informasi</SectionEyebrow>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">

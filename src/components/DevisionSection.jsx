@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight,
-  Sparkles,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
 import { Button } from './Ui/VariantButton';
+import SectionEyebrow from './SectionEyebrow';
 
 const divisions = [
     {
@@ -15,6 +15,7 @@ const divisions = [
       shortName: 'Academy',
       description: 'Platform edukasi terdepan yang menyediakan kursus, pelatihan, dan sertifikasi profesional di bidang kimia dan industri terkait. Kami menghadirkan pembelajaran berkualitas tinggi dengan instruktur berpengalaman.',
       logo: "logo/Latar Putih - Okeanos Academy.png",
+      image: '/divisions/okeanos-academy.jpg',
       gradient: 'from-blue-500 to-cyan-500',
       features: ['Kursus Online & Offline', 'Sertifikasi Profesional', 'Instruktur Ahli'],
       stats: { number: '500+', label: 'Peserta Aktif' },
@@ -26,6 +27,7 @@ const divisions = [
       shortName: 'R&D',
       description: 'Divisi riset dan pengembangan yang fokus pada inovasi teknologi kimia, pengembangan produk baru, dan solusi berkelanjutan untuk industri masa depan.',
       logo: "logo/Latar Putih- Okeanos R&D.png",
+      image: '/divisions/okeanos-rnd.jpg',
       gradient: 'from-indigo-500 to-purple-500',
       features: ['Riset Inovatif', 'Pengembangan Produk', 'Solusi Berkelanjutan'],
       stats: { number: '50+', label: 'Proyek Penelitian' },
@@ -37,6 +39,7 @@ const divisions = [
       shortName: 'Podcast',
       description: 'Media informasi dan edukasi melalui podcast yang membahas tren terkini dalam industri kimia, wawancara dengan para ahli, dan diskusi mendalam tentang perkembangan teknologi.',
       logo: "logo/Latar Putih - Okeanos Podcast.png",
+      image: '/divisions/okeanos-podcast.jpg',
       gradient: 'from-purple-500 to-pink-500',
       features: ['Konten Edukatif', 'Interview Ahli', 'Tren Industri'],
       stats: { number: '10k+', label: 'Monthly Listeners' },
@@ -55,16 +58,16 @@ const DevisionSection = () => {
         setSelectedDivision((prev) => (prev - 1 + divisions.length) % divisions.length);
     };
   return (
-    <section id="okeanos" className="py-24 px-8 sm:px-10 lg:px-12 relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
+    <section id="okeanos" className="relative px-8 py-24 overflow-hidden sm:px-10 lg:px-12 bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
     {/* Background Elements */}
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30 pointer-events-none" />
+    <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30" />
     
     {/* Animated background particles */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {[...Array(50)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+          className="absolute w-1 h-1 rounded-full bg-blue-400/30"
           animate={{
             y: [0, -50, 0],
             opacity: [0, 1, 0],
@@ -82,24 +85,23 @@ const DevisionSection = () => {
       ))}
     </div>
     
-    <div className="max-w-7xl mx-auto relative z-10">
+    <div className="relative z-10 mx-auto max-w-7xl">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-center mb-20"
+        className="mb-20 text-center"
       >
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full mb-8"
+          className="mb-8"
         >
-          <Sparkles className="w-5 h-5 text-blue-300" />
-          <span className="text-blue-300 font-semibold text-md">Divisi Okeanos</span>
+          <SectionEyebrow tone="dark">Divisi Okeanos</SectionEyebrow>
         </motion.div>
         
         <motion.h2
@@ -107,7 +109,7 @@ const DevisionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-blue-200 to-indigo-300 bg-clip-text text-transparent mb-8"
+          className="mb-8 text-5xl font-bold text-transparent lg:text-6xl bg-gradient-to-r from-white via-blue-200 to-indigo-300 bg-clip-text"
         >
           Ekosistem Okeanos
         </motion.h2>
@@ -117,7 +119,7 @@ const DevisionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+          className="max-w-4xl mx-auto text-xl leading-relaxed text-gray-300"
         >
           Tiga pilar utama yang membentuk ekosistem komprehensif Okeanos dalam mendukung 
           pendidikan, penelitian, dan penyebaran informasi di industri kimia
@@ -125,7 +127,7 @@ const DevisionSection = () => {
       </motion.div>
 
       {/* Interactive Showcase */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
         {/* Visual Showcase */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -143,54 +145,62 @@ const DevisionSection = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className={`aspect-square rounded-3xl bg-gradient-to-br ${divisions[selectedDivision].gradient} p-12 shadow-2xl relative overflow-hidden`}>
+              <div className="relative aspect-square overflow-hidden rounded-3xl bg-slate-800 shadow-2xl">
+                <img
+                  src={divisions[selectedDivision].image}
+                  alt={`Aktivitas ${divisions[selectedDivision].name}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div aria-hidden="true" className="absolute inset-0 bg-slate-950/35" />
+                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-28 bg-slate-950/70" />
+
                 {/* Logo */}
-                <div className="absolute top-8 left-8 w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl p-4">
+                <div className="absolute left-8 top-8 h-20 w-20 rounded-2xl bg-white/90 p-4">
                   <img 
                     src={divisions[selectedDivision].logo} 
                     alt={divisions[selectedDivision].name}
-                    className="w-full h-full object-contain"
+                    className="object-contain w-full h-full"
                   />
                 </div>
                 
                 {/* Stats */}
-                <div className="absolute top-8 right-8 text-right">
+                <div className="absolute text-right top-8 right-8">
                   <div className="text-4xl font-bold text-white">
                     {divisions[selectedDivision].stats.number}
                   </div>
-                  <div className="text-white/80 text-sm">
+                  <div className="text-sm text-white/80">
                     {divisions[selectedDivision].stats.label}
                   </div>
                 </div>
                 
                 {/* Center Logo Large */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-white/10 backdrop-blur-sm rounded-3xl p-8">
+                  <div className="h-32 w-32 rounded-3xl bg-white/90 p-8">
                     <img 
                       src={divisions[selectedDivision].logo} 
                       alt={divisions[selectedDivision].name}
-                      className="w-full h-full object-contain"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </div>
                 
                 {/* Division Name */}
                 <div className="absolute bottom-8 left-8">
-                  <div className="text-2xl font-bold text-white mb-2">
+                  <div className="mb-2 text-2xl font-bold text-white">
                     {divisions[selectedDivision].shortName}
                   </div>
-                  <div className="text-white/80 text-sm">
+                  <div className="text-sm text-white/80">
                     Division {selectedDivision + 1} of 3
                   </div>
                 </div>
                 
                 {/* Decorative elements */}
-                <div className="absolute bottom-8 right-8 w-16 h-16 bg-white/10 rounded-full" />
-                <div className="absolute top-1/3 left-1/3 w-24 h-24 bg-white/5 rounded-full" />
+                <div className="absolute w-16 h-16 rounded-full bottom-8 right-8 bg-white/10" />
+                <div className="absolute w-24 h-24 rounded-full top-1/3 left-1/3 bg-white/5" />
               </div>
               
-              {/* Glow Effect */}
-              <div className={`absolute -inset-4 bg-gradient-to-r ${divisions[selectedDivision].gradient} opacity-30 rounded-3xl blur-2xl -z-10`} />
             </motion.div>
           </AnimatePresence>
           
@@ -200,7 +210,7 @@ const DevisionSection = () => {
               onClick={prevDivision}
               variant="outline"
               size="icon"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              className="text-white bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
@@ -223,7 +233,7 @@ const DevisionSection = () => {
               onClick={nextDivision}
               variant="outline"
               size="icon"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              className="text-white bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
@@ -247,15 +257,15 @@ const DevisionSection = () => {
               transition={{ duration: 0.4 }}
               className="space-y-6"
             >
-              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${divisions[selectedDivision].gradient} text-white`}>
-                <span className="font-medium">Division {selectedDivision + 1}</span>
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground">
+                <span className="font-medium">Divisi {selectedDivision + 1}</span>
               </div>
               
-              <h3 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h3 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
                 {divisions[selectedDivision].name}
               </h3>
               
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-xl leading-relaxed text-gray-300">
                 {divisions[selectedDivision].description}
               </p>
               
@@ -269,8 +279,8 @@ const DevisionSection = () => {
                     transition={{ delay: 0.1 * index }}
                     className="flex items-center gap-3"
                   >
-                    <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${divisions[selectedDivision].gradient}`} />
-                    <span className="text-gray-300 font-medium">{feature}</span>
+                    <div className="h-3 w-3 rounded-full bg-blue-300" />
+                    <span className="font-medium text-gray-300">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -280,11 +290,11 @@ const DevisionSection = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button 
-                  className={`bg-gradient-to-r ${divisions[selectedDivision].gradient} hover:opacity-90 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group`}
+                  className="border-0 bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-xl group"
                   size="lg"
                 >
                   <span>Explore {divisions[selectedDivision].shortName}</span>
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </motion.div>
             </motion.div>
@@ -300,7 +310,7 @@ const DevisionSection = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="mt-20"
       >
-        <div className="hidden lg:flex lg:flex-row items-center justify-between gap-8">
+        <div className="items-center justify-between hidden gap-8 lg:flex lg:flex-row">
           {divisions.map((division, index) => (
             <motion.button
               key={division.id}
@@ -314,16 +324,16 @@ const DevisionSection = () => {
               }`}
             >
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-white/20 rounded-xl p-3">
+                <div className="w-16 h-16 p-3 bg-white/20 rounded-xl">
                   <img 
                     src={division.logo} 
                     alt={division.name}
-                    className="w-full h-full object-contain"
+                    className="object-contain w-full h-full"
                   />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-white font-semibold">{division.shortName}</h4>
-                  <p className="text-gray-300 text-sm">{division.stats.label}</p>
+                  <h4 className="font-semibold text-white">{division.shortName}</h4>
+                  <p className="text-sm text-gray-300">{division.stats.label}</p>
                 </div>
               </div>
             </motion.button>
@@ -337,28 +347,8 @@ const DevisionSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="text-center mt-20"
+        className="mt-20 text-center"
       >
-        <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 backdrop-blur-sm rounded-3xl p-12 border border-white/10">
-          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Bergabung dengan Ekosistem Okeanos
-          </h3>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Jadilah bagian dari komunitas yang mendorong inovasi dan kemajuan industri kimia
-          </p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button 
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
-            >
-              Mulai Perjalanan Anda
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </motion.div>
-        </div>
       </motion.div>
     </div>
   </section>

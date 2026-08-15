@@ -23,7 +23,15 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // The base rule does not count JSX member expressions as variable use.
+      'no-unused-vars': ['error', {
+        argsIgnorePattern: '^Icon$',
+        varsIgnorePattern: '^(motion|[A-Z_])',
+      }],
+      'react-refresh/only-export-components': ['error', {
+        allowConstantExport: true,
+        allowExportNames: ['badgeVariants', 'buttonVariants'],
+      }],
     },
   },
 ])

@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'motion/react';
-import { ChevronRight, Beaker, Microscope, Atom } from 'lucide-react';
+import { Beaker, Microscope, Atom } from 'lucide-react';
 import Button from './ui/button';
+import SectionEyebrow from './SectionEyebrow';
 
 const Hero = () => {
   const floatingIcons = [
@@ -53,8 +54,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <span className="text-md">🧪 Mitra Industri Terpercaya</span>
+              <div className="mb-6">
+                <SectionEyebrow>Mitra Industri Terpercaya</SectionEyebrow>
               </div>
               
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -93,13 +94,6 @@ const Hero = () => {
               </Button>
               <Button title={"Lihat Portofolio"} className="bg-primary/10 text-stone-800 border border-primary/20 hover:bg-primary/20">
               </Button>
-              {/* <Button size="lg" className="bg-primary hover:bg-primary/90 group">
-                Jelajahi Layanan
-                <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Lihat Portfolio
-              </Button> */}
             </motion.div>
 
             {/* Stats */}

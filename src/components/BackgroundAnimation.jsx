@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'motion/react';
 export function BackgroundAnimation({ children }) {
   const [activeSection, setActiveSection] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const sections = ['beranda', 'tentang', 'portfolio', 'berita'];
@@ -17,10 +16,7 @@ export function BackgroundAnimation({ children }) {
             const sectionId = entry.target.id;
             const index = sections.indexOf(sectionId);
             if (index !== -1 && index !== activeSection) {
-              setIsTransitioning(true);
               setActiveSection(index);
-              // Reset transitioning state after animation completes
-              setTimeout(() => setIsTransitioning(false), 3000);
             }
           }
         });

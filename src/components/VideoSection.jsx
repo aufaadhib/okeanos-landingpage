@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, Volume2, Maximize, ExternalLink } from 'lucide-react';
+import { Play, Volume2, ExternalLink } from 'lucide-react';
+import SectionEyebrow from './SectionEyebrow';
 
 // Demo YouTube videos - replace with actual Okeanos videos
 const featuredVideos = [
@@ -43,31 +44,6 @@ export function VideoSection() {
     setIsPlaying(false);
   };
 
-  const enterFullscreen = () => {
-    const el = iframeRef.current;
-    if (!el) return;
-
-    // Standar
-    if (el.requestFullscreen) return el.requestFullscreen();
-
-    // Safari
-    const anyEl = el;
-    if (anyEl.webkitRequestFullscreen) return anyEl.webkitRequestFullscreen();
-
-    // IE11 lama (jarang, tapi sekalian)
-    if (anyEl.msRequestFullscreen) return anyEl.msRequestFullscreen();
-  };
-
-  const handleFullscreenClick = () => {
-    // Pastikan sudah dalam mode playing (iframe sudah render)
-    if (!isPlaying) {
-      setIsPlaying(true);
-      // Minta fullscreen setelah iframe terpasang di DOM
-      setTimeout(() => enterFullscreen(), 0);
-    } else {
-      enterFullscreen();
-    }
-  };
   return (
     <section id="video" className="py-24 px-8 sm:px-10 lg:px-12 relative overflow-hidden bg-gray-900">
       {/* Background Elements */}
@@ -111,10 +87,9 @@ export function VideoSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full mb-8"
+            className="mb-8"
           >
-            <Play className="w-5 h-5 text-blue-300" />
-            <span className="text-blue-300 font-semibold text-md">Video Content</span>
+            <SectionEyebrow tone="dark">Video Okeanos</SectionEyebrow>
           </motion.div>
           
           <motion.h2
@@ -282,7 +257,7 @@ export function VideoSection() {
             >
                 <a 
                 href='https://www.youtube.com/@proditeknikkimiauad7047'
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-md transition-all duration-300"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 font-semibold text-primary-foreground shadow-md transition-all duration-300 hover:bg-primary/90"
                 >
                 Lihat Semua Video
                 <ExternalLink className="w-4 h-4" />

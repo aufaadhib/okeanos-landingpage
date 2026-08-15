@@ -98,7 +98,7 @@ const NewsDetailPage = ({ newsItem, onBack }) => {
           <div className="mb-4">
             <Badge 
               variant="secondary" 
-              className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white border-0 px-4 py-2"
+              className="border-0 bg-primary px-4 py-2 text-primary-foreground"
             >
               {newsItem.category}
             </Badge>
@@ -205,7 +205,7 @@ const NewsDetailPage = ({ newsItem, onBack }) => {
             <div className="flex justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button 
-                  className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white border-0"
+                  className="border-0 bg-primary text-primary-foreground hover:bg-primary/90"
                   size="lg"
                 >
                   <Share2 className="w-4 h-4 mr-2" />
@@ -238,7 +238,7 @@ const NewsDetailPage = ({ newsItem, onBack }) => {
             <Button 
               onClick={onBack}
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-xl"
+              className="border-0 bg-primary text-primary-foreground shadow-xl hover:bg-primary/90"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Kembali ke Semua Berita

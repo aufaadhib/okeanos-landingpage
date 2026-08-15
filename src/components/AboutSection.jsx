@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import { CheckCircle, Award, Users, Target } from 'lucide-react';
+import SectionEyebrow from './SectionEyebrow';
 
 const AboutSection = () => {
   const features = [
@@ -39,8 +40,8 @@ const AboutSection = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                <span className="text-md">🏢 Tentang Teknokeanos</span>
+              <div className="mb-6">
+                <SectionEyebrow>Tentang Okeanos</SectionEyebrow>
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold mb-6">

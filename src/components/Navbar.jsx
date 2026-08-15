@@ -73,7 +73,7 @@ const Navbar = () => {
     window.addEventListener("scroll", onSpy);
     onSpy();
     return () => window.removeEventListener("scroll", onSpy);
-  }, [navItems, navHeight]); // re-evaluasi kalau tinggi navbar berubah
+  }, [activeSection, navItems, navHeight]); // re-evaluasi kalau tinggi navbar berubah
 
   // Util scroll halus tanpa mengubah URL
   const scrollToId = (id) => {

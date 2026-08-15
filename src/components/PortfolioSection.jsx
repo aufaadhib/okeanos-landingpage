@@ -4,6 +4,7 @@ import { ExternalLink, Calendar, ArrowRight } from 'lucide-react';
 import { Button } from './Ui/VariantButton';
 import { Badge } from './Ui/Badge';
 import { Card, CardContent } from './Ui/Card';
+import SectionEyebrow from './SectionEyebrow';
 
 const PortfolioSection = ({ onPortfolioClick, onViewAllPortfolio }) => {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
@@ -243,8 +244,8 @@ Material yang dihasilkan telah diaplikasikan dalam prototype device dan menunjuk
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-            <span className="text-md">💼 Portfolio Kami</span>
+          <div className="mb-6">
+            <SectionEyebrow>Portofolio</SectionEyebrow>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
