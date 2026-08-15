@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Button } from './Ui/VariantButton';
 import SectionEyebrow from './SectionEyebrow';
+import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
 const divisions = [
     {
@@ -15,7 +16,7 @@ const divisions = [
       shortName: 'Academy',
       description: 'Platform edukasi terdepan yang menyediakan kursus, pelatihan, dan sertifikasi profesional di bidang kimia dan industri terkait. Kami menghadirkan pembelajaran berkualitas tinggi dengan instruktur berpengalaman.',
       logo: "logo/Latar Putih - Okeanos Academy.png",
-      image: '/divisions/okeanos-academy.jpg',
+      image: '/optimized/okeanos-academy.webp',
       gradient: 'from-blue-500 to-cyan-500',
       features: ['Kursus Online & Offline', 'Sertifikasi Profesional', 'Instruktur Ahli'],
       stats: { number: '500+', label: 'Peserta Aktif' },
@@ -27,7 +28,7 @@ const divisions = [
       shortName: 'R&D',
       description: 'Divisi riset dan pengembangan yang fokus pada inovasi teknologi kimia, pengembangan produk baru, dan solusi berkelanjutan untuk industri masa depan.',
       logo: "logo/Latar Putih- Okeanos R&D.png",
-      image: '/divisions/okeanos-rnd.jpg',
+      image: '/optimized/okeanos-rnd.webp',
       gradient: 'from-indigo-500 to-purple-500',
       features: ['Riset Inovatif', 'Pengembangan Produk', 'Solusi Berkelanjutan'],
       stats: { number: '50+', label: 'Proyek Penelitian' },
@@ -39,7 +40,7 @@ const divisions = [
       shortName: 'Podcast',
       description: 'Media informasi dan edukasi melalui podcast yang membahas tren terkini dalam industri kimia, wawancara dengan para ahli, dan diskusi mendalam tentang perkembangan teknologi.',
       logo: "logo/Latar Putih - Okeanos Podcast.png",
-      image: '/divisions/okeanos-podcast.jpg',
+      image: '/optimized/okeanos-podcast.webp',
       gradient: 'from-purple-500 to-pink-500',
       features: ['Konten Edukatif', 'Interview Ahli', 'Tren Industri'],
       stats: { number: '10k+', label: 'Monthly Listeners' },
@@ -146,25 +147,16 @@ const DevisionSection = () => {
               className="relative"
             >
               <div className="relative aspect-square overflow-hidden rounded-3xl bg-slate-800 shadow-2xl">
-                <img
+                <ImageWithSkeleton
                   src={divisions[selectedDivision].image}
                   alt={`Aktivitas ${divisions[selectedDivision].name}`}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  wrapperClassName="absolute inset-0"
+                  className="h-full w-full object-cover"
+                  loading="eager"
                 />
                 <div aria-hidden="true" className="absolute inset-0 bg-slate-950/35" />
                 <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-28 bg-slate-950/70" />
 
-                {/* Logo */}
-                <div className="absolute left-8 top-8 h-20 w-20 rounded-2xl bg-white/90 p-4">
-                  <img 
-                    src={divisions[selectedDivision].logo} 
-                    alt={divisions[selectedDivision].name}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-                
                 {/* Stats */}
                 <div className="absolute text-right top-8 right-8">
                   <div className="text-4xl font-bold text-white">
@@ -177,7 +169,7 @@ const DevisionSection = () => {
                 
                 {/* Center Logo Large */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-32 w-32 rounded-3xl bg-white/90 p-8">
+                  <div className="h-40 w-40 rounded-3xl bg-white/60 p-8 backdrop-blur-sm lg:h-48 lg:w-48 lg:p-10">
                     <img 
                       src={divisions[selectedDivision].logo} 
                       alt={divisions[selectedDivision].name}

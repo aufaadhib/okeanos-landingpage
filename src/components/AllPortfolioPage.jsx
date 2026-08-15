@@ -11,6 +11,7 @@ import {
 import { Card, CardContent } from './Ui/Card';
 import { Badge } from './Ui/Badge';
 import { Button } from './Ui/VariantButton';
+import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
 export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
   const [selectedCategory, setSelectedCategory] = useState('Semua');
@@ -248,10 +249,11 @@ export default function AllPortfolioPage({ onBack, onPortfolioClick }) {
                   <Card className="overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 h-full">
                     <CardContent className="p-0">
                       <div className="relative overflow-hidden">
-                        <img
+                        <ImageWithSkeleton
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                          wrapperClassName="h-48 w-full"
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

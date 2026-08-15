@@ -1,48 +1,49 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import SectionEyebrow from './SectionEyebrow';
+import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
 const services = [
   {
     id: 1,
     title: 'Peralatan Laboratorium dan Riset',
     description: 'Penyediaan peralatan laboratorium dan instrumen pendukung untuk preparasi sampel, eksperimen, dan pengujian kimia.',
-    image: '/services/Peralatan%20Eksperimen%20dan%20Riset.jpg',
+    image: '/optimized/Peralatan Eksperimen dan Riset.webp',
     features: ['Peralatan Laboratorium', 'Instrumen Pengujian', 'Kebutuhan Preparasi Sampel']
   },
   {
     id: 2,
     title: 'Bahan Kimia dan Bahan Baku',
     description: 'Penyediaan bahan kimia dan bahan baku untuk kebutuhan laboratorium, riset, pengembangan, dan proses produksi sesuai spesifikasi yang dibutuhkan.',
-    image: '/services/Bahan%20Baku%20Berkualitas%20Tinggi.jpg',
+    image: '/optimized/Bahan Baku Berkualitas Tinggi.webp',
     features: ['Bahan Kimia untuk Riset', 'Bahan Baku Formulasi', 'Spesifikasi Produk']
   },
   {
     id: 3,
     title: 'Pelatihan Profesional dan R&D',
     description: 'Pelatihan untuk tim laboratorium, R&D, dan operasional tentang praktik kerja kimia, keselamatan, pengembangan produk, dan penanganan risiko.',
-    image: '/services/Pelatihan%20Profesional.jpg',
+    image: '/optimized/Pelatihan Profesional.webp',
     features: ['Keselamatan Kerja Kimia', 'Metode Kerja Laboratorium', 'Pendampingan R&D']
   },
   {
     id: 4,
     title: 'Pengembangan Peralatan Eksperimental',
     description: 'Perancangan dan pembuatan peralatan eksperimen untuk mendukung proses, pengujian, atau metode riset kimia yang spesifik.',
-    image: '/services/Pengembangan%20Peralatan%20Eksperimental.jpg',
+    image: '/optimized/Pengembangan Peralatan Eksperimental.webp',
     features: ['Perancangan Sesuai Kebutuhan', 'Prototipe dan Pengujian', 'Penyesuaian Sistem Eksperimen']
   },
   {
     id: 5,
     title: 'Dokumentasi Riset dan Kekayaan Intelektual',
     description: 'Pendampingan penyusunan dokumen teknis, laporan, proposal, publikasi, serta dokumentasi hasil pengembangan di bidang kimia.',
-    image: '/services/Layanan%20Publikasi%20dan%20Paten.jpg',
+    image: '/optimized/Layanan Publikasi dan Paten.webp',
     features: ['Dokumen Teknis', 'Proposal dan Laporan Riset', 'Dokumentasi Kekayaan Intelektual']
   },
   {
     id: 6,
     title: 'Analisis Data dan Hasil Pengujian',
     description: 'Pengolahan dan interpretasi data eksperimen untuk membantu evaluasi hasil, perbandingan metode, dan pengambilan keputusan dalam riset kimia.',
-    image: '/services/Analisis%20Data.jpg',
+    image: '/optimized/Analisis Data.webp',
     features: ['Pengolahan Data Eksperimen', 'Interpretasi Hasil Pengujian', 'Visualisasi Data']
   }
 ];
@@ -152,12 +153,11 @@ const ServicesSection = () => {
                 transition={{ duration: 0.3 }}
                 className="relative overflow-hidden shadow-xl rounded-2xl lg:rounded-3xl"
               >
-                <img
+                <ImageWithSkeleton
                   src={service.image}
                   alt={service.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="object-cover w-full aspect-square"
+                  wrapperClassName="aspect-square w-full"
+                  className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 px-5 py-4 text-white bg-slate-950/75 lg:px-7 lg:py-5">
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-blue-200">

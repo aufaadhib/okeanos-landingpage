@@ -5,12 +5,14 @@ const ERROR_IMG_SRC =
 
 export function ImageWithFallback(props) {
   const [didError, setDidError] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  const handleError = () => {
+  const handleError = (event) => {
     setDidError(true)
+    props.onError?.(event)
   }
 
-  const { src, alt, style, className, ...rest } = props
+  const { src, alt, style, className, onLoad, ...rest } = props
 
   return didError ? (
     <div
@@ -22,6 +24,33 @@ export function ImageWithFallback(props) {
       </div>
     </div>
   ) : (
-    <img src={src} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <div
+      className={`relative overflow-hidden ${className ?? ''}`}
+      style={style}
+      aria-busy={!isLoaded}
+    >
+      {!isLoaded && (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 animate-pulse bg-slate-200 motion-reduce:animate-none"
+        />
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`relative z-10 transition-opacity duration-300 ease-out motion-reduce:transition-none ${
+          isLoaded ? 'opacity-100' : 'opacity-0'
+        } ${className ?? ''}`}
+        style={style}
+        loading={rest.loading ?? 'lazy'}
+        decoding={rest.decoding ?? 'async'}
+        {...rest}
+        onLoad={(event) => {
+          setIsLoaded(true)
+          onLoad?.(event)
+        }}
+        onError={handleError}
+      />
+    </div>
   )
 }

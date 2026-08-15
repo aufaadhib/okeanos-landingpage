@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Play, Volume2, ExternalLink } from 'lucide-react';
 import SectionEyebrow from './SectionEyebrow';
+import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
 // Demo YouTube videos - replace with actual Okeanos videos
 const featuredVideos = [
@@ -128,10 +129,12 @@ export function VideoSection() {
                 {!isPlaying ? (
                   // Video Thumbnail with Play Button
                   <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlaying(true)}>
-                    <img 
+                    <ImageWithSkeleton
                       src={selectedVideo.thumbnail} 
                       alt={selectedVideo.title}
-                      className="w-full h-full object-cover"
+                      wrapperClassName="h-full w-full"
+                      className="h-full w-full object-cover"
+                      loading="eager"
                     />
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
                     
@@ -221,10 +224,11 @@ export function VideoSection() {
                 <div className="backdrop-blur-sm bg-gray-800/50 border-gray-700 hover:bg-gray-700/50 transition-all duration-300 text-card-foreground flex flex-col gap-6 rounded-xl border">
                   <div className="flex gap-4 p-4">
                     <div className="relative flex-shrink-0">
-                      <img 
+                      <ImageWithSkeleton
                         src={video.thumbnail} 
                         alt={video.title}
-                        className="w-24 h-16 object-cover rounded"
+                        wrapperClassName="h-16 w-24 rounded"
+                        className="h-full w-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/20 rounded flex items-center justify-center">
                         <Play className="w-4 h-4 text-white" />

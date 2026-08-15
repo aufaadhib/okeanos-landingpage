@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Beaker, Microscope, Atom } from 'lucide-react';
 import Button from './ui/button';
 import SectionEyebrow from './SectionEyebrow';
+import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
 const Hero = () => {
   const floatingIcons = [
@@ -131,10 +132,13 @@ const Hero = () => {
             className="relative"
           >
             <div className="relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 backdrop-blur-sm">
-              <img
-                src="hero/hero-section.png"
+              <ImageWithSkeleton
+                src="/optimized/hero-section.webp"
                 alt="Modern Chemistry Laboratory Research"
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                wrapperClassName="aspect-[4/3] w-full rounded-2xl shadow-2xl"
+                className="h-full w-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
               
               {/* Floating Cards */}
