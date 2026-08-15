@@ -132,7 +132,7 @@ export function VideoSection() {
                     <ImageWithSkeleton
                       src={selectedVideo.thumbnail} 
                       alt={selectedVideo.title}
-                      wrapperClassName="h-full w-full"
+                      wrapperClassName="relative h-full w-full"
                       className="h-full w-full object-cover"
                       loading="eager"
                     />
@@ -227,7 +227,7 @@ export function VideoSection() {
                       <ImageWithSkeleton
                         src={video.thumbnail} 
                         alt={video.title}
-                        wrapperClassName="h-16 w-24 rounded"
+                        wrapperClassName="relative h-16 w-24 rounded"
                         className="h-full w-full object-cover"
                       />
                       <div className="absolute inset-0 bg-black/20 rounded flex items-center justify-center">

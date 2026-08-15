@@ -29,7 +29,7 @@ export function ImageWithSkeleton({
 
   return (
     <div
-      className={`relative overflow-hidden ${wrapperClassName}`}
+      className={`overflow-hidden ${wrapperClassName}`}
       aria-busy={!isLoaded}
     >
       {!isLoaded && <div aria-hidden="true" className={skeletonClassName} />}

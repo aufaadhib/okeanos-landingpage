@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight
-} from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './Ui/VariantButton';
 import SectionEyebrow from './SectionEyebrow';
 import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
@@ -17,10 +13,8 @@ const divisions = [
       description: 'Platform edukasi terdepan yang menyediakan kursus, pelatihan, dan sertifikasi profesional di bidang kimia dan industri terkait. Kami menghadirkan pembelajaran berkualitas tinggi dengan instruktur berpengalaman.',
       logo: "logo/Latar Putih - Okeanos Academy.png",
       image: '/optimized/okeanos-academy.webp',
-      gradient: 'from-blue-500 to-cyan-500',
       features: ['Kursus Online & Offline', 'Sertifikasi Profesional', 'Instruktur Ahli'],
       stats: { number: '500+', label: 'Peserta Aktif' },
-      color: 'blue'
     },
     {
       id: 2,
@@ -29,10 +23,8 @@ const divisions = [
       description: 'Divisi riset dan pengembangan yang fokus pada inovasi teknologi kimia, pengembangan produk baru, dan solusi berkelanjutan untuk industri masa depan.',
       logo: "logo/Latar Putih- Okeanos R&D.png",
       image: '/optimized/okeanos-rnd.webp',
-      gradient: 'from-indigo-500 to-purple-500',
       features: ['Riset Inovatif', 'Pengembangan Produk', 'Solusi Berkelanjutan'],
       stats: { number: '50+', label: 'Proyek Penelitian' },
-      color: 'indigo'
     },
     {
       id: 3,
@@ -41,10 +33,8 @@ const divisions = [
       description: 'Media informasi dan edukasi melalui podcast yang membahas tren terkini dalam industri kimia, wawancara dengan para ahli, dan diskusi mendalam tentang perkembangan teknologi.',
       logo: "logo/Latar Putih - Okeanos Podcast.png",
       image: '/optimized/okeanos-podcast.webp',
-      gradient: 'from-purple-500 to-pink-500',
       features: ['Konten Edukatif', 'Interview Ahli', 'Tren Industri'],
       stats: { number: '10k+', label: 'Monthly Listeners' },
-      color: 'purple'
     }
   ];
 
@@ -59,32 +49,7 @@ const DevisionSection = () => {
         setSelectedDivision((prev) => (prev - 1 + divisions.length) % divisions.length);
     };
   return (
-    <section id="okeanos" className="relative px-8 py-24 overflow-hidden sm:px-10 lg:px-12 bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30">
-    {/* Background Elements */}
-    <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-slate-900 via-blue-900/20 to-indigo-900/30" />
-    
-    {/* Animated background particles */}
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(50)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-1 h-1 rounded-full bg-blue-400/30"
-          animate={{
-            y: [0, -50, 0],
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-        />
-      ))}
-    </div>
+    <section id="okeanos" className="relative overflow-hidden bg-slate-950 px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
     
     <div className="relative z-10 mx-auto max-w-7xl">
       {/* Section Header */}
@@ -93,7 +58,7 @@ const DevisionSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-20 text-center"
+        className="mb-14 text-center lg:mb-20"
       >
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
@@ -110,7 +75,7 @@ const DevisionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-8 text-5xl font-bold text-transparent lg:text-6xl bg-gradient-to-r from-white via-blue-200 to-indigo-300 bg-clip-text"
+          className="mb-6 text-4xl font-bold text-white lg:text-6xl"
         >
           Ekosistem Okeanos
         </motion.h2>
@@ -120,7 +85,7 @@ const DevisionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-4xl mx-auto text-xl leading-relaxed text-gray-300"
+          className="mx-auto max-w-4xl text-lg leading-relaxed text-slate-300 lg:text-xl"
         >
           Tiga pilar utama yang membentuk ekosistem komprehensif Okeanos dalam mendukung 
           pendidikan, penelitian, dan penyebaran informasi di industri kimia
@@ -146,7 +111,7 @@ const DevisionSection = () => {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative aspect-square overflow-hidden rounded-3xl bg-slate-800 shadow-2xl">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-slate-900 shadow-2xl lg:rounded-3xl">
                 <ImageWithSkeleton
                   src={divisions[selectedDivision].image}
                   alt={`Aktivitas ${divisions[selectedDivision].name}`}
@@ -154,11 +119,11 @@ const DevisionSection = () => {
                   className="h-full w-full object-cover"
                   loading="eager"
                 />
-                <div aria-hidden="true" className="absolute inset-0 bg-slate-950/35" />
-                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-28 bg-slate-950/70" />
+                <div aria-hidden="true" className="absolute inset-0 z-20 bg-slate-950/35" />
+                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 z-20 h-28 bg-slate-950/70" />
 
                 {/* Stats */}
-                <div className="absolute text-right top-8 right-8">
+                <div className="absolute right-8 top-8 z-30 text-right">
                   <div className="text-4xl font-bold text-white">
                     {divisions[selectedDivision].stats.number}
                   </div>
@@ -168,10 +133,10 @@ const DevisionSection = () => {
                 </div>
                 
                 {/* Center Logo Large */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 z-30 flex items-center justify-center">
                   <div className="h-40 w-40 rounded-3xl bg-white/60 p-8 backdrop-blur-sm lg:h-48 lg:w-48 lg:p-10">
                     <img 
-                      src={divisions[selectedDivision].logo} 
+                      src={`/${divisions[selectedDivision].logo}`} 
                       alt={divisions[selectedDivision].name}
                       className="object-contain w-full h-full"
                     />
@@ -179,7 +144,7 @@ const DevisionSection = () => {
                 </div>
                 
                 {/* Division Name */}
-                <div className="absolute bottom-8 left-8">
+                <div className="absolute bottom-8 left-8 z-30">
                   <div className="mb-2 text-2xl font-bold text-white">
                     {divisions[selectedDivision].shortName}
                   </div>
@@ -188,44 +153,48 @@ const DevisionSection = () => {
                   </div>
                 </div>
                 
-                {/* Decorative elements */}
-                <div className="absolute w-16 h-16 rounded-full bottom-8 right-8 bg-white/10" />
-                <div className="absolute w-24 h-24 rounded-full top-1/3 left-1/3 bg-white/5" />
               </div>
               
             </motion.div>
           </AnimatePresence>
           
           {/* Navigation Controls */}
-          <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="mt-6 flex items-center justify-center gap-3">
             <Button
+              aria-label="Divisi sebelumnya"
               onClick={prevDivision}
               variant="outline"
               size="icon"
-              className="text-white bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
+              className="border-slate-700 bg-slate-900 text-white hover:bg-blue-700"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
             
-            <div className="flex gap-2">
+            <div className="flex items-center gap-1">
               {divisions.map((_, index) => (
                 <button
+                  type="button"
                   key={index}
+                  aria-label={`Tampilkan ${divisions[index].name}`}
                   onClick={() => setSelectedDivision(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === selectedDivision 
-                      ? 'bg-white scale-125' 
-                      : 'bg-white/30 hover:bg-white/50'
-                  }`}
-                />
+                  className="flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`h-2.5 w-2.5 rounded-full transition-colors duration-200 motion-reduce:transition-none ${
+                      index === selectedDivision ? 'bg-blue-400' : 'bg-slate-600 hover:bg-slate-400'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
             
             <Button
+              aria-label="Divisi berikutnya"
               onClick={nextDivision}
               variant="outline"
               size="icon"
-              className="text-white bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
+              className="border-slate-700 bg-slate-900 text-white hover:bg-blue-700"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
@@ -238,7 +207,7 @@ const DevisionSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-6"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -249,46 +218,33 @@ const DevisionSection = () => {
               transition={{ duration: 0.4 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground">
-                <span className="font-medium">Divisi {selectedDivision + 1}</span>
+              <div className="border-l-2 border-blue-400 pl-3 text-sm font-semibold uppercase tracking-[0.16em] text-blue-300">
+                Divisi {selectedDivision + 1}
               </div>
               
-              <h3 className="text-4xl font-bold leading-tight text-white lg:text-5xl">
+              <h3 className="text-3xl font-bold leading-tight text-white lg:text-5xl">
                 {divisions[selectedDivision].name}
               </h3>
               
-              <p className="text-xl leading-relaxed text-gray-300">
+              <p className="text-lg leading-relaxed text-slate-300 lg:text-xl">
                 {divisions[selectedDivision].description}
               </p>
               
               {/* Features */}
-              <div className="space-y-4">
+              <div className="space-y-3 border-l border-slate-700 pl-5">
                 {divisions[selectedDivision].features.map((feature, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 * index }}
-                    className="flex items-center gap-3"
+                    className="border-b border-slate-800 pb-3 text-slate-200 last:border-b-0 last:pb-0"
                   >
-                    <div className="h-3 w-3 rounded-full bg-blue-300" />
-                    <span className="font-medium text-gray-300">{feature}</span>
+                    <span className="font-medium">{feature}</span>
                   </motion.div>
                 ))}
               </div>
               
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button 
-                  className="border-0 bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90 hover:shadow-xl group"
-                  size="lg"
-                >
-                  <span>Explore {divisions[selectedDivision].shortName}</span>
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                </Button>
-              </motion.div>
             </motion.div>
           </AnimatePresence>
         </motion.div>
@@ -300,47 +256,32 @@ const DevisionSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="mt-20"
+        className="mt-14 border-t border-slate-800 pt-8 lg:mt-20"
       >
-        <div className="items-center justify-between hidden gap-8 lg:flex lg:flex-row">
+        <div className="hidden items-stretch justify-between gap-4 lg:flex lg:flex-row">
           {divisions.map((division, index) => (
             <motion.button
               key={division.id}
+              type="button"
               onClick={() => setSelectedDivision(index)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex-1 p-6 rounded-2xl transition-all duration-300 ${
+              className={`flex-1 border p-5 text-left transition-colors duration-200 motion-reduce:transition-none ${
                 index === selectedDivision
-                  ? 'bg-white/20 backdrop-blur-sm border border-white/30'
-                  : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10'
+                  ? 'border-blue-400 bg-blue-700 text-white'
+                  : 'border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800'
               }`}
             >
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 p-3 bg-white/20 rounded-xl">
-                  <img 
-                    src={division.logo} 
-                    alt={division.name}
-                    className="object-contain w-full h-full"
-                  />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-white">{division.shortName}</h4>
-                  <p className="text-sm text-gray-300">{division.stats.label}</p>
-                </div>
+              <div>
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-blue-200">
+                  Pilar {division.id}
+                </p>
+                <h4 className="font-semibold">{division.shortName}</h4>
+                <p className="mt-1 text-sm opacity-80">{division.stats.label}</p>
               </div>
             </motion.button>
           ))}
         </div>
-      </motion.div>
-
-      {/* Bottom CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-        className="mt-20 text-center"
-      >
       </motion.div>
     </div>
   </section>

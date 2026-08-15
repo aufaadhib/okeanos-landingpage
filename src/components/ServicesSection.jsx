@@ -156,7 +156,7 @@ const ServicesSection = () => {
                 <ImageWithSkeleton
                   src={service.image}
                   alt={service.title}
-                  wrapperClassName="aspect-square w-full"
+                  wrapperClassName="relative aspect-square w-full"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-x-0 bottom-0 px-5 py-4 text-white bg-slate-950/75 lg:px-7 lg:py-5">

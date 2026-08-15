@@ -152,7 +152,7 @@ const Hero = () => {
               <ImageWithSkeleton
                 src="/optimized/hero-section.webp"
                 alt="Modern Chemistry Laboratory Research"
-                wrapperClassName="aspect-[4/3] w-full rounded-2xl shadow-2xl"
+                wrapperClassName="relative aspect-[4/3] w-full rounded-2xl shadow-2xl"
                 className="h-full w-full object-cover"
                 loading="eager"
                 fetchPriority="high"
