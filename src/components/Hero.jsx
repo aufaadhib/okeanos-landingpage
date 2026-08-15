@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'motion/react';
 import { Beaker, Microscope, Atom } from 'lucide-react';
-import Button from './ui/button';
+import Button from './Ui/Button';
 import SectionEyebrow from './SectionEyebrow';
 import { ImageWithSkeleton } from './Ui/ImageWithSkeleton';
 
